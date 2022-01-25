@@ -1,13 +1,18 @@
 import Router from '@koa/router'
 import RobotService from '../service/RobotService';
 import { HttpError } from '../util/Error';
+
+/**
+ * 机器人
+ */
 const RobotRouter = new Router({
     prefix: '/robot'
 });
 
+
 const robotService = new RobotService()
 /**
- * 生成二维码
+ * 聊天机器人
  */
 RobotRouter.get('/chat', async (ctx) => {
     const params = ctx.query;

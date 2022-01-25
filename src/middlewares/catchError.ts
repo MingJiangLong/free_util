@@ -7,8 +7,8 @@ export default async function catchError(
     } catch (error: any) {
         ctx.response.status = error.code;
         ctx.response.body = {
-            code: error.code,
-            message: error.message
+            code: error?.code || 500,
+            message: error?.message || '服务器繁忙！'
         }
     }
 }

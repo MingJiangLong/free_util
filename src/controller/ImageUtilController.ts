@@ -1,6 +1,10 @@
 import Router from '@koa/router'
 import ImageUtilService from '../service/ImageUtilService';
 import { HttpError } from '../util/Error';
+
+/**
+ * 图片类型
+ */
 const ImageUtilRouter = new Router({
     prefix: '/image'
 });
@@ -23,7 +27,7 @@ ImageUtilRouter.get('/genQrCode', async (ctx, next) => {
     }
 })
 /**
- * 生成二维码
+ * 随机二次元图片
  */
 ImageUtilRouter.get('/randomACGN', async (ctx) => {
     const base64String = await imageUtilService.getRandomACGNImage();
